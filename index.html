@@ -45,11 +45,6 @@
       if (type) q.set("type", type);
       var target = frontend + "/view/" + encodeURIComponent(id) + "?" + q.toString();
 
-      // Manual fallback link (only if the element exists — must NOT block redirect).
-      if (msg) {
-        msg.innerHTML = 'إذا لم يتم تحويلك تلقائياً، <a href="' + target + '">اضغط هنا</a>.';
-      }
-
       // Redirect. This runs regardless of the DOM, so the page can never hang.
       window.location.replace(target);
     })();
